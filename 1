@@ -1,0 +1,295 @@
+# REKAP SISTEM SITUNEO
+
+## 🎯 STRUKTUR ROLE (5 ROLE SYSTEM)
+
+### Hierarchy
+1. **Client** - Pemesan jasa
+2. **Partner** - Sales/Marketing (40% komisi)
+3. **SPV** - Supervisor (10% komisi, min 10 partner)
+4. **Manager Area** - Manager (5% komisi, min 3 SPV)
+5. **Admin** - Full control
+
+### Rekrutmen SPV & Manager
+- Hire dari luar via register + Admin approved
+- Bukan promote dari partner
+
+---
+
+## 💰 SISTEM KOMISI
+
+### Pembagian Komisi (Contoh: Order Rp 10 juta)
+- Partner: 40% = Rp 4 juta
+- SPV: 10% = Rp 1 juta
+- Manager: 5% = Rp 500K
+- SITUNEO: 45% = Rp 4.5 juta
+
+### Benefit Punya SPV/Manager
+- Ada bimbingan
+- Patungan tanggungan jika client bayar <3 bulan
+
+---
+
+## 📊 TIER SYSTEM PARTNER
+
+| Tier | Target/Bulan | Komisi |
+|------|--------------|--------|
+| **Tier 1** | 0-10 order | 30% |
+| **Tier 2** | 10-25 order | 40% |
+| **Tier 3** | 50+ order | 50% |
+| **Tier MAX** | 75+ order | 55% |
+
+### Aturan Tier
+- **TURUN** jika tidak maintain target bulan depan
+- Partner baru bisa langsung **Tier MAX dalam 1 bulan**
+- Minimal Tier 2: 10 order/bulan untuk bertahan
+
+---
+
+## 💵 HARGA & KOMISI PRODUK
+
+### Beli Putus
+- **Harga:** Rp 350K/halaman
+- **Komisi Partner:** 40% sekali saat serah terima
+- Contoh: 5 halaman = Rp 1.75 juta → Partner dapat Rp 700K
+
+### Sewa
+- **Harga:** Rp 150K/halaman/bulan (minimal 3 bulan)
+- **Komisi Partner:** 40% hanya bulan pertama
+- Bulan 2-12: TIDAK dapat komisi
+- Contoh: 5 halaman = Rp 750K/bulan → Partner dapat Rp 300K (bulan 1 saja)
+
+### Penalty
+- Client stop <3 bulan → Partner bayar tagihan 1 bulan
+
+---
+
+## 🎁 ARPU BONUS (SPV & MANAGER)
+
+### Target & Bonus (Per Bulan)
+- **Rp 15M** → Bonus Rp 500K
+- **Rp 35M** → Bonus Rp 1M
+- **Rp 75M** → Bonus Rp 2M
+- **Rp 200M+** → Bonus Rp 10M
+
+### Perhitungan
+- Total revenue semua partner dibawahnya
+- Tutup buku akhir bulan
+- Bonus diberikan setiap bulan
+
+### Contoh
+SPV punya 10 Partner, total revenue Rp 40 juta:
+- Komisi base 10% = Rp 4 juta
+- ARPU Bonus (tier Rp 35M) = Rp 1 juta
+- **Total SPV dapat: Rp 5 juta**
+
+---
+
+## 📝 DEMO REQUEST FORM
+
+### Spesifikasi
+- **26 Fields** untuk client request demo/order
+- Pilihan: Demo gratis ATAU langsung order
+
+### Proses
+1. Client submit form
+2. Admin review
+3. Admin approve/reject
+4. Jika kurang lengkap → Info via WhatsApp/Dashboard
+5. Admin buat demo
+
+### Copy Detail Button
+- Format: Plain text + JSON/File
+- Siap upload ke AI (Claude/ChatGPT)
+
+---
+
+## 📋 TASK BOARD PARTNER
+
+### Sistem Rebutan
+1. Admin post task ke semua Partner/SPV/Manager
+2. Siapa cepat ambil, dia dapat
+3. Admin pastikan kemampuan partner
+4. Jika tidak yakin → ganti partner lain
+5. Komisi ditentukan Admin
+
+### Jenis Task
+- Coding fitur tambahan
+- Maintenance website
+- Custom request dari layanan SITUNEO
+
+---
+
+## 💳 WITHDRAWAL SYSTEM
+
+### Aturan
+- **Minimal:** Rp 50K
+- **Fee:** GRATIS
+- **Sistem:** Manual (tidak auto)
+
+### Proses
+1. Partner request withdrawal
+2. Admin approve
+3. Admin transfer manual via m-banking
+4. Tidak ada integrasi Xendit/Midtrans
+
+---
+
+## 🌐 50 DEMO WEBSITES
+
+### Spesifikasi
+- Real functioning (tampilan + logic berjalan)
+- Bukan static HTML atau screenshot
+- Fokus: Tampilan muncul & berfungsi dengan lancar
+
+### Struktur
+- **Lokasi:** Dalam 1 folder (`/demos/kategori/`)
+- **Kategori:** 50 bisnis populer (toko online, restoran, klinik, sekolah, dll)
+
+---
+
+## 🎨 UI/UX DESIGN
+
+### Network Particle Animation
+- Konsisten di semua halaman
+- Always on (tidak bisa disable)
+- Jumlah particles: Disesuaikan optimal
+
+### Loading Screen
+- **Durasi:** 2 detik
+- **Tampil:** Logo SITUNEO + Tagline + "Memuat ke [Halaman]..."
+- **Trigger:** Setiap page transition
+
+### Responsive Design
+- **Prioritas:** Mobile-first (maksimalkan tampilan mobile)
+- **Desktop:** Rapih, tidak perlu ekstrem
+- **Admin/SPV/Manager Dashboard:** Stabil di mobile & desktop
+
+---
+
+## 🗄️ DATABASE & FILE STRUCTURE
+
+### Database
+- **Total:** 85 tables
+- **Buat:** Langsung sekaligus (1 SQL file)
+- **Sample data:** Kosong (real data only)
+
+### File Structure
+- **Total:** 400+ files
+- **Organize:** By Role
+
+```
+/admin/
+  /dashboard/
+  /users/
+  /orders/
+/client/
+  /dashboard/
+  /orders/
+/partner/
+  /dashboard/
+  /earnings/
+/spv/
+  /dashboard/
+  /team/
+/manager/
+  /dashboard/
+  /area/
+```
+
+---
+
+## 🔒 SECURITY
+
+### Password Policy
+- Minimal: 8 karakter
+- Bebas (tidak wajib uppercase/lowercase/number/special char)
+
+### Session
+- **Timeout:** 1 hari
+- **Remember me:** Yes
+
+### Admin Access
+- **IP Whitelist:** TIDAK ada (login dari mana saja)
+
+---
+
+## ⚙️ DEVELOPMENT SETUP
+
+### Environment
+- **Production:** https://situneo.my.id
+- **Staging:** TIDAK ada (langsung production)
+
+### Git Workflow
+- **Repository:** Private
+- **Upload:** Manual oleh Anda
+
+### Documentation
+- **Level:** Basic (README + installation guide)
+- **UI:** Self-explanatory (mudah dipahami sendiri)
+
+### Backup
+- **Trigger:** Manual dari admin
+- **Retention:** 30 hari terakhir
+
+---
+
+## 🚀 FUTURE FEATURES
+
+### Payment Gateway
+- **Saat ini:** Manual (upload bukti transfer)
+- **Future:** Lihat nanti (Midtrans/Xendit)
+
+### Multi-Language
+- **Bahasa:** Indonesia & English
+- **Scope:** Semua pages (termasuk dashboard)
+- **Switch:** Manual toggle (user pilih sendiri)
+
+### Live Chat
+- **Tidak ada** → Langsung ke WhatsApp (jadi database & bisa dikunci)
+
+### Blog & Career
+- **Blog:** Admin bisa setting & maintain
+- **Career:** Untuk rekrutmen team SITUNEO (admin update)
+
+---
+
+## 🎯 PRIORITAS & TARGET
+
+### Development Priority
+- **Semua penting** (tidak ada ranking khusus)
+- Admin atur prioritas teknis
+
+### Quality Standard
+- **Quality First** (tidak speed first)
+- Zero bug sebelum lanjut fase berikutnya
+- Test dulu, aman semua, baru lanjut
+- Target: **PERFECT**
+
+### Success Metrics
+✅ Website live & terima order
+✅ Partner recruit client & dapat komisi
+✅ Traffic tinggi
+✅ Conversion rate tinggi
+
+### Deadline
+- **Bebas** (quality first, no rush)
+
+### Concern Utama
+- **Security:** Harus aman
+- **Performance:** Super lengkap
+- **Scalability:** Awal normal, future 10,000+ users
+- **Maintainability:** Code mudah di-maintain
+
+---
+
+## 📞 CATATAN PENTING
+
+1. Ada **70 materi** total dalam file ini
+2. Hal kecil yang belum dipahami → **Boleh tanya**
+3. Target: **Hasil maksimal**
+
+---
+
+**Dibuat:** November 2024
+**Project:** SITUNEO - Multi-level Marketing Website Development
+**Developer:** Claude AI + Fasda
