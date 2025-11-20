@@ -1,0 +1,39 @@
+REKAP LENGKAP ISI FILE:
+1. SKEMA KOMISI FREELANCE (Sistem Tier Berjenjang)
+Struktur Tier:
+
+Tier 1 → Target: 0-10 order/bulan → Komisi: 30%
+
+Naik otomatis ke Tier 2 jika mencapai 10 order
+
+
+Tier 2 → Target: 10-25 order/bulan → Komisi: 40%
+
+Naik otomatis ke Tier 3 jika mencapai 25 order
+Turun ke Tier 1 jika di bawah 10 order bulan berikutnya
+
+
+Tier 3 → Target: 50 order/bulan → Komisi: 50%
+
+Tetap di Tier 3 jika stabil 50 order/bulan
+Turun ke Tier 2 jika hanya dapat 25 order bulan berikutnya
+
+
+Tier MAKSIMAL → Target: 75+ order/bulan → Komisi: 50% + 5% bonus = 55%
+
+Ketentuan Naik Tier:
+
+Tier 1 → Tier 2: Wajib 10 order/bulan
+Tier 2 → Tier 3: Wajib 25 order/bulan
+Tier 3 → Maksimal: Wajib 75+ order/bulan
+
+
+2. PERSYARATAN PENGEMBANGAN WEBSITE
+
+Mulai dari Batch 1
+Implementasi semua fitur dari contoh yang diberikan
+Fokus prioritas: Desain terlebih dahulu
+Database: Boleh lebih dari 30 tabel (sesuai kebutuhan fungsi)
+Deliverable: Struktur sistem
+Konten: Website super lengkap dari semua file yang dikirim di GitHub
+Integrasi: Semua komponen website harus sinkron dan sesuai brand Situneo
