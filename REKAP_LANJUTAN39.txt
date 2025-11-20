@@ -1,0 +1,354 @@
+═══════════════════════════════════════════════════════════════════
+                    REKAP LENGKAP FILE LANJUTAN39
+═══════════════════════════════════════════════════════════════════
+
+FILE: lanjutan39
+JENIS: Halaman Pricing/Harga Paket (PHP + HTML)
+TOTAL BARIS: 1.263 baris
+STATUS PEMBACAAN: ✅ 100% LENGKAP
+
+═══════════════════════════════════════════════════════════════════
+                        STRUKTUR FILE
+═══════════════════════════════════════════════════════════════════
+
+1. BACKEND PHP (Baris 1-199)
+   ├── Database Settings (baris 6-13)
+   └── Definisi 6 Paket Layanan (baris 16-198)
+
+2. FRONTEND HTML/CSS/JS (Baris 200-1263)
+   ├── Head & Meta Tags
+   ├── Hero Section dengan Animasi
+   ├── Pricing Cards
+   ├── Comparison Table
+   ├── FAQ Section
+   ├── CTA Section
+   ├── Footer
+   └── JavaScript Interaktif
+
+═══════════════════════════════════════════════════════════════════
+                    DETAIL 6 PAKET LAYANAN
+═══════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│ PAKET 1: STARTER                                                │
+├─────────────────────────────────────────────────────────────────┤
+│ Harga       : Rp 1.500.000 / tahun                              │
+│ Target      : Bisnis baru mulai digitalisasi                    │
+│ Fitur       :                                                    │
+│   ✅ Website 5 halaman                                          │
+│   ✅ Responsive Design                                          │
+│   ✅ Basic SEO Setup                                            │
+│   ✅ Contact Form                                               │
+│   ✅ 1x Revisi                                                  │
+│   ✅ SSL Certificate                                            │
+│   ✅ Free Domain (.my.id)                                       │
+│   ✅ 1GB Hosting                                                │
+│   ✅ Email Support                                              │
+│   ✅ 6 bulan maintenance                                        │
+│ Tidak Termasuk:                                                  │
+│   ❌ Custom Design                                              │
+│   ❌ Advanced SEO                                               │
+│   ❌ Content Creation                                           │
+│   ❌ Social Media Integration                                   │
+│   ❌ Analytics Setup                                            │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ PAKET 2: PROFESSIONAL ⭐ POPULER                                │
+├─────────────────────────────────────────────────────────────────┤
+│ Harga       : Rp 3.500.000 / tahun                              │
+│ Target      : Bisnis serius dengan online presence              │
+│ Fitur       :                                                    │
+│   ✅ Website 10 halaman                                         │
+│   ✅ Custom Design                                              │
+│   ✅ Advanced SEO Setup                                         │
+│   ✅ Contact Form + Quote Form                                  │
+│   ✅ 3x Revisi                                                  │
+│   ✅ SSL Certificate                                            │
+│   ✅ Free Domain (.com/.id)                                     │
+│   ✅ 5GB Hosting                                                │
+│   ✅ Email + Phone Support                                      │
+│   ✅ 1 tahun maintenance                                        │
+│   ✅ Google Analytics Setup                                     │
+│   ✅ Social Media Integration                                   │
+│ Tidak Termasuk:                                                  │
+│   ❌ E-Commerce Functionality                                   │
+│   ❌ Content Creation                                           │
+│   ❌ Monthly SEO Optimization                                   │
+│   ❌ PPC Advertising Setup                                      │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ PAKET 3: E-COMMERCE                                             │
+├─────────────────────────────────────────────────────────────────┤
+│ Harga       : Rp 5.000.000 / tahun                              │
+│ Target      : Toko online dengan fitur lengkap                  │
+│ Fitur       :                                                    │
+│   ✅ Toko Online Lengkap                                        │
+│   ✅ Payment Gateway Integration                                │
+│   ✅ Product Management System                                  │
+│   ✅ Shopping Cart & Checkout                                   │
+│   ✅ Order Management                                           │
+│   ✅ Inventory Management                                       │
+│   ✅ Custom Design                                              │
+│   ✅ Advanced SEO Setup                                         │
+│   ✅ SSL Certificate                                            │
+│   ✅ Free Domain (.com/.id)                                     │
+│   ✅ 10GB Hosting                                               │
+│   ✅ Email + Phone Support                                      │
+│   ✅ 1 tahun maintenance                                        │
+│   ✅ Google Analytics Setup                                     │
+│ Tidak Termasuk:                                                  │
+│   ❌ Content Creation                                           │
+│   ❌ Monthly SEO Optimization                                   │
+│   ❌ PPC Advertising Setup                                      │
+│   ❌ Social Media Management                                    │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ PAKET 4: BUSINESS                                               │
+├─────────────────────────────────────────────────────────────────┤
+│ Harga       : Rp 7.500.000 / tahun                              │
+│ Target      : Bisnis dengan kebutuhan digital kompleks          │
+│ Fitur       :                                                    │
+│   ✅ Custom Web Application                                     │
+│   ✅ Advanced Database System                                   │
+│   ✅ User Management System                                     │
+│   ✅ Payment Gateway Integration                                │
+│   ✅ API Development                                            │
+│   ✅ Custom Design                                              │
+│   ✅ Advanced SEO Setup                                         │
+│   ✅ SSL Certificate                                            │
+│   ✅ Free Domain (.com/.id)                                     │
+│   ✅ 20GB Hosting                                               │
+│   ✅ Priority Support                                           │
+│   ✅ 1 tahun maintenance                                        │
+│   ✅ Google Analytics Setup                                     │
+│   ✅ Performance Optimization                                   │
+│ Tidak Termasuk:                                                  │
+│   ❌ Content Creation                                           │
+│   ❌ Monthly SEO Optimization                                   │
+│   ❌ PPC Advertising Setup                                      │
+│   ❌ Social Media Management                                    │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ PAKET 5: ENTERPRISE                                             │
+├─────────────────────────────────────────────────────────────────┤
+│ Harga       : Rp 15.000.000 / tahun                             │
+│ Target      : Perusahaan besar dengan kebutuhan khusus          │
+│ Fitur       :                                                    │
+│   ✅ Custom Enterprise Solution                                 │
+│   ✅ Advanced Database Architecture                             │
+│   ✅ Multi-Role User System                                     │
+│   ✅ Advanced Analytics Dashboard                               │
+│   ✅ API Integration (Multiple)                                 │
+│   ✅ Custom Design                                              │
+│   ✅ Advanced SEO Setup                                         │
+│   ✅ SSL Certificate                                            │
+│   ✅ Free Domain (.com/.id)                                     │
+│   ✅ Unlimited Hosting                                          │
+│   ✅ Dedicated Support                                          │
+│   ✅ 2 tahun maintenance                                        │
+│   ✅ Google Analytics Setup                                     │
+│   ✅ Performance Optimization                                   │
+│   ✅ Security Audit                                             │
+│   ✅ Training & Documentation                                   │
+│ Tidak Termasuk:                                                  │
+│   ❌ Content Creation                                           │
+│   ❌ Monthly SEO Optimization                                   │
+│   ❌ PPC Advertising Setup                                      │
+│   ❌ Social Media Management                                    │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ PAKET 6: CUSTOM                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│ Harga       : Custom (sesuai kebutuhan)                         │
+│ Target      : Bisnis dengan kebutuhan sangat spesifik           │
+│ Fitur       :                                                    │
+│   ✅ Konsultasi Gratis                                          │
+│   ✅ Analisis Kebutuhan Bisnis                                  │
+│   ✅ Solusi Custom Design                                       │
+│   ✅ Fitur Sesuai Permintaan                                    │
+│   ✅ Timeline Disesuaikan                                       │
+│   ✅ Budget Fleksibel                                           │
+│   ✅ Tim Ahli Berpengalaman                                     │
+│   ✅ Support Prioritas                                          │
+│   ✅ Garansi Kepuasan                                           │
+│ Tidak Termasuk:                                                  │
+│   ❌ Fitur yang tidak disepakati dalam konsultasi awal         │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+                    TEKNOLOGI YANG DIGUNAKAN
+═══════════════════════════════════════════════════════════════════
+
+BACKEND:
+  • PHP (untuk database query dan logic)
+  • MySQL (database settings)
+
+FRONTEND:
+  • HTML5
+  • CSS3 (Custom styling)
+  • Bootstrap 5.3.3
+  • Bootstrap Icons 1.11.3
+  • JavaScript (Vanilla JS)
+
+LIBRARIES:
+  • AOS (Animate On Scroll) v2.3.1
+  • Canvas API (untuk animasi partikel)
+
+═══════════════════════════════════════════════════════════════════
+                    FITUR HALAMAN LENGKAP
+═══════════════════════════════════════════════════════════════════
+
+✅ HERO SECTION
+   └── Background animasi partikel dengan Canvas API
+   └── Judul besar dengan gradient text
+   └── Subtitle menarik
+   └── CTA button ke WhatsApp
+
+✅ PRICING CARDS
+   └── 6 paket dalam grid responsive
+   └── Badge "POPULER" untuk paket Professional
+   └── Hover effects (scale + shadow)
+   └── Icon check/cross untuk fitur
+   └── Button CTA ke WhatsApp per paket
+
+✅ COMPARISON TABLE
+   └── Tabel perbandingan semua fitur
+   └── Sticky header
+   └── Responsive horizontal scroll
+   └── Highlight untuk paket Popular
+
+✅ FAQ SECTION
+   └── Accordion-style FAQ
+   └── Icon rotasi saat expand
+   └── Smooth transition
+   └── Pertanyaan umum tentang paket
+
+✅ CTA SECTION
+   └── Background gradient
+   └── Call-to-action konsultasi
+   └── Button WhatsApp
+
+✅ FOOTER
+   └── 4 kolom informasi
+   └── Quick links
+   └── Layanan populer
+   └── Contact info
+   └── Social media links
+   └── Copyright
+
+✅ FLOATING BUTTON
+   └── Tombol WhatsApp melayang
+   └── Selalu visible di layar
+   └── Hover animation
+
+✅ NAVBAR
+   └── Sticky navigation
+   └── Scroll effect (blur background)
+   └── Responsive mobile menu
+
+═══════════════════════════════════════════════════════════════════
+                    WARNA & TEMA DESAIN
+═══════════════════════════════════════════════════════════════════
+
+PALETTE:
+  • Primary   : #FFB400 (Gold)
+  • Dark      : #1a1a1a (Hitam pekat)
+  • Text Light: #e0e0e0 (Abu terang)
+  • Accent    : #FF6B00 (Orange)
+
+STYLE:
+  • Dark luxury theme
+  • Modern & professional
+  • Animasi smooth
+  • Gradient effects
+  • Glass morphism (blur effects)
+
+═══════════════════════════════════════════════════════════════════
+                    JAVASCRIPT FEATURES
+═══════════════════════════════════════════════════════════════════
+
+1. ANIMASI PARTIKEL (Canvas API)
+   └── 80 partikel bergerak
+   └── Koneksi antar partikel dalam radius 150px
+   └── Auto resize on window change
+
+2. NAVBAR SCROLL EFFECT
+   └── Backdrop blur saat scroll > 100px
+   └── Background transparan ke solid
+
+3. FAQ TOGGLE
+   └── Show/hide answer
+   └── Icon rotation
+
+4. AOS INITIALIZATION
+   └── Duration: 1000ms
+   └── Once: true (animasi 1x saja)
+   └── Offset: 100px
+
+═══════════════════════════════════════════════════════════════════
+                    INFORMASI KONTAK
+═══════════════════════════════════════════════════════════════════
+
+Company   : SITUNEO DIGITAL
+WhatsApp  : +62 831-7386-8915
+Email     : support@situneo.my.id
+Location  : Jakarta Timur, Indonesia
+
+Semua paket terhubung ke WhatsApp dengan pre-filled message
+
+═══════════════════════════════════════════════════════════════════
+                    KODE PENTING
+═══════════════════════════════════════════════════════════════════
+
+DATABASE QUERY:
+```php
+$result = $conn->query("SELECT setting_key, setting_value FROM settings");
+```
+
+WHATSAPP LINKS:
+```
+https://wa.me/6283173868915?text=Halo, saya mau pesan paket [NAMA_PAKET]
+```
+
+PARTICLE ANIMATION:
+```javascript
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 2 + 1;
+    }
+}
+```
+
+═══════════════════════════════════════════════════════════════════
+                        RANGKUMAN AKHIR
+═══════════════════════════════════════════════════════════════════
+
+File "lanjutan39" adalah halaman PRICING/HARGA PAKET yang sangat
+lengkap dengan:
+
+✅ 6 paket layanan (Starter - Enterprise + Custom)
+✅ Design modern dark luxury theme
+✅ Animasi partikel interaktif
+✅ Responsive di semua device
+✅ Integrasi WhatsApp untuk semua CTA
+✅ FAQ section
+✅ Comparison table
+✅ SEO-friendly meta tags
+✅ Fast loading dengan CDN
+✅ Professional footer dengan semua info kontak
+
+TARGET: Bisnis yang ingin membuat website dengan berbagai budget
+        dari Rp 1.5 juta hingga Rp 15 juta per tahun.
+
+═══════════════════════════════════════════════════════════════════
+                    FILE SUDAH DIBACA 100% ✅
+═══════════════════════════════════════════════════════════════════
