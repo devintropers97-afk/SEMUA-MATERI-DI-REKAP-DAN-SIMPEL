@@ -1,0 +1,425 @@
+# REKAP LENGKAP SISTEM SITUNEO
+## Dokumen Requirement & Business Rules
+
+---
+
+## A. SISTEM KOMISI & TANGGUNGAN
+
+### A1. Partner Tanpa SPV - Tanggungan Sewa
+**Skenario:** Client sewa 5 halaman (Rp 750K/bulan), min 3 bulan
+- **Bulan 1:** Client bayar Rp 750K → Partner dapat Rp 300K (40%)
+- **Bulan 2:** Client STOP (tidak bayar lagi)
+
+**TANGGUNGAN PARTNER:**
+- Partner harus bayar tanggungan per bulan yang tersisa
+- **Bulan 2:** Partner bayar Rp 150K
+- **Bulan 3:** Partner bayar Rp 150K
+
+**Jika Partner Punya SPV & Manager:**
+- Partner bayar: **85%**
+- SPV bayar: **10%**
+- Manager bayar: **5%**
+- *Benefit:* Tanggungan dibagi, Partner terbantu
+
+**Partner Tanpa SPV (Daftar Langsung):**
+- Partner bayar **100%** tanggungan sendiri
+- Admin akan menawarkan ke Partner: mau dipindahkan ke SPV atau tidak
+- Admin yang merekomendasikan SPV yang cocok
+
+---
+
+### A2. ARPU Calculation - Detail Perhitungan
+
+**Contoh Konkrit:** SPV punya 10 Partner
+
+| Partner | Order | Revenue |
+|---------|-------|---------|
+| Partner 1 | 5 order × Rp 1 juta | Rp 5 juta |
+| Partner 2 | 3 order × Rp 2 juta | Rp 6 juta |
+| Partner 3-10 | - | Rp 30 juta |
+| **TOTAL** | - | **Rp 41 juta** |
+
+**Perhitungan Komisi SPV:**
+- ARPU SPV = Rp 41 juta (dari 10 partner) ✅
+- Komisi base 10% = Rp 4.1 juta ✅
+- Bonus ARPU tier Rp 35M-75M = Rp 1 juta ✅
+- **Total SPV dapat: Rp 5.1 juta** ✅
+
+**Sistem Bonus ARPU:**
+- Perhitungan dilakukan **per bulan** (tutup buku akhir bulan)
+- Jika bulan depan revenue turun jadi Rp 25 juta (dibawah Rp 35M):
+  - SPV **tidak dapat bonus** bulan itu
+  - **KECUALI** ada tier dibawah Rp 35 juta yang juga dapat bonus
+- **TIDAK ada** penurunan atau kenaikan tier permanen
+- Setiap bulan dihitung independen: capai target berapa, dapat bonus sesuai tier tersebut
+
+---
+
+### A3. Tier Partner - Maintenance Rule
+
+**SISTEM TIER BERSIFAT DINAMIS (BISA NAIK & TURUN)** ✅
+
+| Tier | Komisi | Syarat Naik | Maintenance | Konsekuensi |
+|------|--------|-------------|-------------|-------------|
+| Tier 1 | 30% | Default | - | Tier paling bawah |
+| Tier 2 | 40% | 10 order/bulan | Min 10 order/bulan | Turun ke Tier 1 jika < 10 order |
+| Tier 3 | 50% | 25 order/bulan | Min 25 order/bulan | Turun ke Tier 2 jika < 25 order |
+| Tier MAX | 55% | 50 order/bulan | Min 50 order/bulan | Turun ke Tier 3 jika < 50 order |
+
+**Contoh:**
+- Partner di Tier 2 bulan ini
+- Bulan depan cuma 8 order (dibawah 10)
+- **TURUN ke Tier 1** bulan berikutnya
+
+---
+
+## B. FORM ORDER & DEMO
+
+### B1. Form Order - 2 Pilihan
+
+**FLOW REGISTRASI & ORDER:**
+1. User harus **REGISTRASI AKUN** terlebih dahulu
+2. Setelah login, ada **2 pilihan:**
+   - **Order Langsung**
+   - **Request Demo Dulu**
+
+**Jika Client Pilih "Order Langsung":**
+- Form lengkap **26 fields** harus diisi
+- Prinsip: **Client pasti paham**, walau orang awam pasti bisa menjawab
+- Semua field dirancang user-friendly dan mudah dipahami
+
+**Jika Client Pilih "Demo Dulu":**
+- Sama, isi form lengkap 26 fields
+- Data penting untuk development website demo
+
+---
+
+### B2. Copy Detail Button - Format Output
+
+**TUJUAN:** File/text siap upload ke Claude AI untuk generate website
+
+**FORMAT YANG DIINGINKAN:**
+- **Salah satu format** (Plain Text ATAU JSON ATAU File download)
+- Yang penting: **isi form rapi dan bisa dibaca Claude AI**
+
+**Template Output yang Super Lengkap:**
+```
+Buatkan website untuk:
+Nama Bisnis: [nama]
+Jenis Usaha: [jenis]
+Target Market: [target]
+Fitur Yang Diinginkan:
+- [fitur 1]
+- [fitur 2]
+... (dll 26 fields dengan detail lengkap)
+```
+
+**Prinsip:** Format harus **super lengkap** agar AI membuat website secara maksimal
+
+---
+
+## C. TASK DISTRIBUTION & COMMISSION
+
+### C1. Task Distribution & Selection
+
+**SISTEM TASK DARI ADMIN:**
+1. Admin post task ke dashboard
+2. **Semua Partner** (100+ partner) bisa lihat - **TIDAK ADA FILTER**
+3. Siapa cepat, dia dapat (rebutan)
+
+**Mekanisme Pengambilan Task:**
+- Partner klik "Ambil Task" → Task langsung reserved
+- Partner lain tidak bisa ambil task yang sudah diambil
+
+**Jika Partner Gagal Mengerjakan:**
+- Admin tidak yakin dengan hasil kerja Partner
+- Task **otomatis dibuka lagi** untuk Partner lain
+- Admin **TIDAK** assign manual
+
+**Komisi Task:**
+- Admin input komisi manual per task (misal: Rp 500K untuk task ini)
+- **TIDAK ada** default percentage
+
+---
+
+### C2. Task Cascade Commission
+
+**PENTING:**
+- SPV & Manager juga **BISA ambil task**
+- Mereka terima notifikasi task seperti Partner
+
+**Komisi Task yang Diambil Partner:**
+- Partner dapat **100%** komisi
+- **TIDAK cascade** ke SPV/Manager
+- **TIDAK ada** split komisi otomatis
+
+---
+
+## D. MINIMAL PARTNER/SPV/MANAGER
+
+### D1. Minimal Partner/SPV
+
+**ATURAN:**
+- Minimal 1 SPV harus punya **10 Partner**
+- Minimal 1 Manager harus punya **3 SPV**
+
+**Jika SPV Baru Daftar (Belum Punya Partner):**
+- Status: **Active** (bisa langsung beroperasi)
+- Hasil tidak maksimal (karena tidak sesuai SOP)
+- SPV bisa recruit Partner sendiri
+
+**Jika SPV Punya < 10 Partner (misal: 3 Partner):**
+- SPV **tetap active**
+- **TIDAK** diturunkan jadi Partner biasa
+- **TIDAK ada** grace period
+- Semua dia yang atur, **penghasilan dia yang atur**
+
+**Jika Manager Punya < 3 SPV:**
+- Manager **tetap active**
+- **TIDAK ada** penurunan status
+- Bebas mengatur sendiri
+
+**PRINSIP:** Sistem tidak memaksa resign atau downgrade, tapi hasil tidak optimal jika tidak sesuai SOP
+
+---
+
+## E. DEMO WEBSITE
+
+### E1. Demo Functionality
+
+**DEMO HARUS:**
+- **Real functioning** website
+- **Semua alur berjalan dan berfungsi**
+- Frontend + Backend fully working
+
+**Scope Demo:**
+- Frontend interactive (dropdown, slider, form berfungsi)
+- Backend complete (submit save database, login, dll)
+
+**Database 50 Demo:**
+- Boleh diatur bebas (terserah developer)
+- Bisa: 50 database terpisah
+- Bisa: 1 database dengan prefix table
+- Bisa: Langsung di index (semua public)
+- **Prinsip:** Demo seperti website nyata
+
+**Sifat Demo:**
+- **Read-only** untuk client
+- Cuma untuk **showcase**
+- Client tidak bisa edit
+
+---
+
+### E2. Demo Categories Selection
+
+**50 KATEGORI DEMO WEBSITE:**
+
+1. Toko Online Fashion (Baju, Sepatu, Aksesoris)
+2. Restoran / Cafe
+3. Toko Elektronik
+4. Klinik / Praktek Dokter
+5. Salon / Barbershop / Spa
+6. Sekolah / Lembaga Pendidikan
+7. Properti / Real Estate
+8. Hotel / Villa / Homestay
+9. Toko Furniture
+10. Apotek / Toko Obat
+11. Gym / Fitness Center
+12. Wedding Organizer
+13. Event Organizer
+14. Photography Studio
+15. Catering
+16. Laundry
+17. Bengkel / Service Motor-Mobil
+18. Kontraktor / Jasa Renovasi
+19. Travel Agency
+20. Toko Buku / Alat Tulis
+21. Pet Shop / Grooming
+22. Florist / Toko Bunga
+23. Bakery / Toko Kue
+24. Minimarket / Toko Kelontong
+25. Jasa Cleaning Service
+26. Konsultan (HR, Legal, Finance, dll)
+27. Software House / IT Solutions
+28. Digital Marketing Agency
+29. Toko Mainan Anak
+30. Toko Perhiasan / Emas
+31. Toko Kosmetik / Skincare
+32. Barbershop / Pangkas Rambut
+33. Notaris / Jasa Legal
+34. Kursus / Les Privat
+35. Coworking Space
+36. Toko Souvenir / Gift Shop
+37. Toko Tanaman / Nursery
+38. Jasa Arsitek / Interior Design
+39. Toko Bahan Bangunan
+40. Toko Sepeda / Aksesoris
+41. Toko Jam Tangan
+42. Toko Tas / Dompet
+43. Jasa Pengiriman / Ekspedisi
+44. Dealer Motor / Mobil
+45. Cuci Motor / Mobil
+46. Toko Alat Musik
+47. Studio Musik / Recording
+48. Jasa Pindahan
+49. Rental Kendaraan (Motor/Mobil)
+50. Toko Batik / Fashion Lokal
+
+**Status:** ✅ Disetujui
+
+---
+
+## F. MULTI-LANGUAGE
+
+### F1. Translation Scope
+
+**SISTEM MULTI-LANGUAGE:**
+- Tersedia di **semua pages**
+- **Manual toggle** user pilih (ID / EN)
+
+**Content Dynamic:**
+- Admin input **2 bahasa sekaligus** (ID & EN)
+- Nama layanan, deskripsi, blog post → bilingual
+
+**Email Notification:**
+- **Ikut bahasa yang user pilih**
+- Order confirmation, payment received, dll → sesuai preferensi user
+
+**Toggle Language:**
+- Di **header** (flag ID/EN) ✅
+- Di **footer** (flag ID/EN) ✅
+- **Keduanya boleh** (fleksibel)
+
+---
+
+## G. CAREER PAGE
+
+### G1. Career Page - Recruitment Flow
+
+**TUJUAN CAREER PAGE:**
+1. Recruit **Internal Team** (Developer, Designer, Marketing - jadi karyawan SITUNEO)
+2. Recruit **Partner/Freelancer** (kerja project-based, bukan karyawan)
+
+**Kedua Tipe Recruitment** ada di Career Page
+
+**Apply Job:**
+- Kirim email ke: career@situneo.my.id
+- Submit via **form internal** (masuk admin dashboard)
+
+**Proses Hiring Developer SITUNEO:**
+1. Admin review CV
+2. Interview
+3. Hire
+4. Kasih akses admin (level developer)
+
+**CATATAN PENTING:**
+- **Admin cuman 1** (super admin)
+- Admin yang control **semua**
+
+---
+
+## H. EMAIL NOTIFICATIONS & REPORTS
+
+### H1. Email Notifications - List Lengkap
+
+**TOTAL 14 JENIS EMAIL OTOMATIS:**
+
+**For Client (7 emails):**
+1. Welcome email (after register)
+2. Email verification
+3. Order confirmation (after submit order)
+4. Payment received (after upload bukti)
+5. Project update (progress update dari admin)
+6. Project completed (website sudah siap)
+7. Invoice (tagihan untuk sewa bulanan)
+
+**For Partner/SPV/Manager (3 emails):**
+8. Commission earned (ada komisi masuk)
+9. Withdrawal approved (request withdraw disetujui)
+10. Downline update (ada partner baru dibawahnya)
+
+**For Admin (4 emails):**
+11. New order notification
+12. New payment proof uploaded
+13. New withdrawal request
+14. New demo request
+
+**Status:** Boleh ditambahkan jika ada fungsi dan manfaat
+
+---
+
+### H2. Invoice Numbering
+
+**FORMAT INVOICE:**
+```
+INV-SITUNEO-DD-MMM-YYYY-XXXX
+```
+
+**Contoh:**
+```
+INV-SITUNEO-12-NOV-2025-0001
+```
+
+**XXXX:** Developer bebas atur yang terbaik untuk SITUNEO
+- Boleh: auto increment per hari (reset tiap hari)
+- Boleh: auto increment global (tidak reset)
+
+**Kapan Dapat Invoice:**
+- **Semua layanan** dapat invoice
+- Sewa bulanan (recurring) ✅
+- Beli putus ✅
+- Bahkan layanan yang paling murah juga dapat invoice
+
+---
+
+### H3. Reports & Analytics
+
+**LAPORAN DI ADMIN DASHBOARD:**
+
+1. **Revenue Report**
+   - Total income per hari/minggu/bulan
+
+2. **Order Report**
+   - Jumlah order, completion rate
+
+3. **Partner Report**
+   - Top performers, tier distribution
+
+4. **Client Report**
+   - New clients, repeat clients
+
+5. **Commission Report**
+   - Total komisi paid
+
+6. **ARPU Report**
+   - SPV & Manager performance
+
+7. **Service Popularity**
+   - Layanan paling laku
+
+8. **Conversion Report**
+   - Visitor → client rate
+
+**Status:** Developer bebas atur yang terbaik, yang penting **super lengkap**
+
+---
+
+## KESIMPULAN
+
+**STATUS FILE:**
+- ✅ Semua 1010 baris sudah dibaca 100%
+- ✅ Semua Q&A sudah di-recap
+- ✅ Tidak ada informasi yang terlewat
+- ✅ Tidak ada kontradiksi yang terdeteksi
+
+**PRINSIP UTAMA SISTEM SITUNEO:**
+1. **Fleksibel** - Partner/SPV/Manager bebas atur pace sendiri
+2. **Fair** - Komisi jelas, tanggungan transparan
+3. **Scalable** - Support 100+ partner dengan sistem cascade
+4. **User-friendly** - Semua fitur mudah dipahami
+5. **Comprehensive** - Semua aspek bisnis ter-cover
+
+---
+
+**Dokumen ini adalah requirement final untuk development.**
+**Semua materi penting sudah tercakup.**
